@@ -1,0 +1,17 @@
+{
+    "name": "xnzdev/antd-automake",
+    "description": "Make Antd-Pro v4 Page with MySQL table fields.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "chen",
+            "email": "xnzdev@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "XnzDev\\AntAutoMake\\": "src"
+        }
+    }
+}
