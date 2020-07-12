@@ -1,9 +1,6 @@
 <?php
 
-
-//Route::any("/xnzdev/index", function (){ return '222'; });
 Route::get('/xnzdev/index.html', '\XnzDev\AntAutoMake\Controllers\AutoMakeController@ant'); // 首页
-
 
 // view-source:127.0.0.1:8085
 //

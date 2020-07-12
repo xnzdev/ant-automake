@@ -1,7 +1,6 @@
 {
     "name": "xnzdev/antd-automake",
     "description": "Make Antd-Pro v4 Page with MySQL table fields.",
-
     "license":"MIT",
     "authors": [
         {
@@ -14,15 +13,14 @@
         "psr-4": {
             "XnzDev\\AntAutoMake\\": "src"
         },
-        "files": [
-            "src/AutoFunctions.php"
-        ]
+        "files": ["src/AutoFunctions.php"]
     },
     "extra": {
         "laravel": {
             "providers": [
-                "XnzDev\\AntAutoMake\\Providers\\AntAutoMakeServiceProvider"
+                "XnzDev\\AntAutoMake\\AntAutoMakeServiceProvider"
             ]
         }
     }
+
 }
