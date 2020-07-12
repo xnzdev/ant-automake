@@ -1,2 +1,2 @@
 # ant-automake
-Ant Design page auto make with MySQL.
+Ant Design page auto make with MySQL in Laravel.
