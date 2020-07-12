@@ -1,6 +1,6 @@
 <?php
 
-namespace XnzDev\AntAutoMake;
+namespace XnzDev\AntAutoMake\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
