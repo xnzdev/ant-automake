@@ -8,23 +8,22 @@ import { showDeleteConfirm } from '@/xnz_components/confirm';
 import { queryGII, updateGII, addGII, removeGII } from './service';
 
 /**
- *  删除节点
- * @param  selectedRows
- */
-const handleRemove = async selectedRows => {
+* 删除节点
+* @param row / row.id
+*/
+const handleDelete = async row => {
   const hide = message.loading('正在删除');
-  if (!selectedRows) return true;
+  if (!row) return true;
   try {
-    await removeGII({
-      {{primaryKeyOfFields($vars['fields_arr'])}}: selectedRows.map(row => row.{{primaryKeyOfFields($vars['fields_arr'])}}),
+    let resp = await removeGII({
+      {{primaryKeyOfFields($vars['fields_arr'])}}: row.{{primaryKeyOfFields($vars['fields_arr'])}},
     });
     hide();
-    message.success('删除成功，即将刷新');
-    return true;
+    if(resp.code == 200){ message.success('删除成功，即将刷新'); return true; }
+    else{ message.error(resp.message); return false; }
   } catch (error) {
-    console.error(error)
     hide();
-    message.error('删除失败，请重试');
+    message.error('删除请求异常，请重试');
     return false;
   }
 };
@@ -51,9 +50,8 @@ const ThisTable = () => {
             className="handle-link"
             onClick={() => {
               showDeleteConfirm("删除ID:"+row.id , ()=>{
-                handleRemove([row]);
-                if(actionRef.current){
-                  actionRef.current.reload();
+                if(handleDelete(row) && actionRef.current){
+                    actionRef.current.reload();
                 }
               })
             }}

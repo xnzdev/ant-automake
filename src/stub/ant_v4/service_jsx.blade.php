@@ -11,7 +11,7 @@ import request from '@/utils/request';
  * @return {object}
  * {
     'status'  : 'ok',     //通过‘ok’ 字符串判断接口避免ajax出现数据类型错误。 枚举ok, error
-    'code' : 200, 
+    'code' : 200,
     'message'     : 'success',
     'result'    : {
       "list" => $list,
@@ -21,7 +21,7 @@ import request from '@/utils/request';
           "pageSize" => $page_size,     // 每页的条数
       ]
     }
-  } 
+  }
  */
 
 /**
@@ -39,6 +39,7 @@ export async function queryGII(params) {
     data: {
       ...params,
       page: params.current,
+      method: 'GET'
     },
   });
   return {
@@ -51,18 +52,18 @@ export async function queryGII(params) {
 export async function removeGII(params) {
   return request('/api/{{$apiName}}/delete', {
     method: 'POST',
-    data: { ...params, method: 'delete' },
+    data: { ...params, method: 'DELETE' },
   });
 }
 export async function addGII(params) {
   return request('/api/{{$apiName}}/save', {
     method: 'POST',
-    data: { ...params, method: 'post' },
+    data: { ...params, method: 'POST' },
   });
 }
 export async function updateGII(params) {
   return request('/api/{{$apiName}}/save', {
     method: 'POST',
-    data: { ...params, method: 'update' },
+    data: { ...params, method: 'PUT' },
   });
 }

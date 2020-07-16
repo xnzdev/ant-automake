@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Database\Connection;
 use Illuminate\Http\Request;
 
+/**
+ * @group Class AntReactController
+ * @package XnzDev\AntAutoMake\Controllers
+ */
+
 class AntReactController extends Controller
 {
     //
